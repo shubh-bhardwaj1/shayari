@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Breach</title>
+    <style>
+        body {
+            background-color: black;
+            color: #0f0;
+            font-family: "Courier New", monospace;
+            text-align: center;
+            overflow: hidden;
+            user-select: none;
+        }
+
+        #terminal {
+            width: 90%;
+            height: 70vh;
+            background-color: black;
+            padding: 10px;
+            border: 2px solid #0f0;
+            box-shadow: 0px 0px 10px #0f0;
+            font-size: 16px;
+            white-space: pre-wrap;
+            overflow-y: auto;
+            margin: auto;
+            text-align: left;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+            text-shadow: 0px 0px 10px red;
+            font-size: 22px;
+        }
+
+        .countdown {
+            font-size: 40px;
+            font-weight: bold;
+            color: red;
+            text-shadow: 0px 0px 10px red;
+            text-align: center;
+        }
+
+        .hacker-name {
+            font-size: 35px;
+            font-weight: bold;
+            color: cyan;
+            text-shadow: 0px 0px 10px cyan;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            animation: glitch 0.3s infinite;
+        }
+
+        @keyframes glitch {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(3px); }
+            50% { transform: translateX(-3px); }
+            75% { transform: translateX(3px); }
+            100% { transform: translateX(0); }
+        }
+
+        @keyframes screenCrash {
+            0% { background-color: black; }
+            50% { background-color: red; }
+            100% { background-color: black; }
+        }
+
+        .blackout {
+            animation: screenCrash 0.1s infinite;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="hacker-name">💀 HACKED BY SIDDHANT 💀</div>
+    <h1 class="error glitch">⚠️ SYSTEM BREACH DETECTED! ⚠️</h1>
+    <div id="terminal"></div>
+    <h2 class="countdown">Self-Destruction in <span id="timer">10</span> seconds...</h2>
+
+    <script>
+        let terminal = document.getElementById("terminal");
+        let timerElement = document.getElementById("timer");
+        let logs = [
+            "[Initializing System Scan...]",
+            "[Bypassing Firewall...]",
+            "[Injecting Trojan Horse...]",
+            "[Accessing Personal Data...]",
+            "[Cloning Bank Details...]",
+            "[Camera Access Granted...]",
+            "[Microphone Recording Started...]",
+            "[Warning: Malware Detected!]",
+            "[Error: System Integrity Compromised!]",
+            "[Virus Activated: Self-Destruction in 10s...]",
+            "[💀 SYSTEM HACKED BY SIDDHANT 💀]",
+        ];
+        
+        let index = 0;
+        let countdown = 10;
+        let hasStarted = false;
+
+        function typeLogs() {
+            if (index < logs.length) {
+                let line = logs[index] + "\n";
+                terminal.innerHTML += line;
+                index++;
+
+                setTimeout(typeLogs, Math.random() * 1500);
+            } else {
+                setTimeout(startCountdown, 1000);
+            }
+        }
+
+        function startCountdown() {
+            let interval = setInterval(() => {
+                countdown--;
+                timerElement.innerText = countdown;
+                if (countdown <= 0) {
+                    clearInterval(interval);
+                    shutdownEffect();
+                }
+            }, 1000);
+        }
+
+        function shutdownEffect() {
+            document.body.innerHTML = "<h1 class='error glitch'>💀 SYSTEM FAILURE! DEVICE SHUTTING DOWN... 💀</h1>";
+            document.body.classList.add("blackout");
+
+            setTimeout(() => {
+                document.body.innerHTML = "<h1 class='error glitch'>🔥 SYSTEM DESTROYED! 🔥</h1>";
+            }, 5000);
+        }
+
+        // 🔴 **DISABLE MOUSE & KEYBOARD INPUT**  
+        document.addEventListener("keydown", function(event) {
+            event.preventDefault();
+        });
+
+        document.addEventListener("mousedown", function(event) {
+            event.preventDefault();
+        });
+
+        // 🔥 **Back Button & Home Button Press = CRASH**
+        window.history.pushState(null, "", window.location.href);
+        window.addEventListener("popstate", function () {
+            crashSystem();
+        });
+
+        function crashSystem() {
+            document.body.innerHTML = "<h1 class='error glitch'>💀 SYSTEM FAILURE! DEVICE SHUTTING DOWN... 💀</h1>";
+            document.body.classList.add("blackout");
+
+            setTimeout(() => {
+                document.body.innerHTML = "<h1 class='error glitch'>🔥 SYSTEM DESTROYED! 🔥</h1>";
+            }, 5000);
+        }
+
+        // 🔥 **Start Sound & Logs on User Interaction**
+        document.body.addEventListener("click", function() {
+            if (!hasStarted) {
+                hasStarted = true;
+                
+                // Play background sound
+                let bgSound = new Audio('https://www.myinstants.com/media/sounds/horror-tension.mp3');
+                bgSound.loop = true;
+                bgSound.play();
+
+                typeLogs();
+            }
+        });
+
+    </script>
+
+</body>
+</html>
