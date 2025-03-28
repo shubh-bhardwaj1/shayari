@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good Morning Wishes</title>
+    <style>
+        @keyframes gradientBG {
+            0% { background: linear-gradient(135deg, #ff9a9e, #ff9a9e); }
+            50% { background: linear-gradient(135deg, #ff9a9e, #ff9a9e); }
+            100% { background: linear-gradient(135deg, #ff9a9e, #ff9a9e); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes glow {
+            0% { box-shadow: 0px 0px 10px gold; }
+            50% { box-shadow: 0px 0px 20px gold; }
+            100% { box-shadow: 0px 0px 10px gold; }
+        }
+
+        body {
+            animation: gradientBG 5s infinite alternate;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 30px;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            animation: glow 2s infinite alternate;
+        }
+
+        .shayari-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .shayari-box {
+            width: 90%;
+            max-width: 400px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            border: 2px solid gold;
+            font-size: 16px;
+            font-weight: bold;
+            transition: transform 0.3s ease, background 0.3s ease;
+            animation: float 3s infinite ease-in-out;
+        }
+
+        .shayari-box:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .shayari-text {
+            font-style: italic;
+            color: #fff;
+        }
+
+        .btn {
+            margin-top: 20px;
+            padding: 12px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: gold;
+            color: black;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+            animation: glow 2s infinite alternate;
+        }
+
+        .btn:hover {
+            background-color: orange;
+            transform: scale(1.1);
+        }
+
+        .contact-info {
+            margin-top: 30px;
+            font-size: 18px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .contact-info a {
+            color: cyan;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        @media (min-width: 600px) {
+            .shayari-box {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 400px) {
+            body {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 28px;
+            }
+            .shayari-box {
+                font-size: 14px;
+                padding: 12px;
+            }
+            .btn {
+                font-size: 16px;
+                padding: 10px 18px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>🌞 Good Morning! 🌞</h1>
+
+    <div class="shayari-container">
+        <div class="shayari-box">
+            <p class="shayari-text">अब काश मेरे दर्द की कोई दवा न हो</p>
+            <p class="shayari-text">बढ़ता ही जाये ये तो मुसल्सल शिफ़ा न हो</p>
+            <p class="shayari-text">बाग़ों में देखूं टूटे हुए बर्ग ओ बार ही</p>
+            <p class="shayari-text">मेरी नजर बहार की फिर आशना न हो</p>
+        </div>
+        <div class="shayari-box">
+            <p class="shayari-text">आसान नहीं होता</p>
+            <p class="shayari-text">इतना बड़ा सफ़र लड़-झगड़कर भी तय कर लेना</p>
+            <p class="shayari-text">मेरे दोस्त यहाँ मैंने</p>
+            <p class="shayari-text">बड़ी-बड़ी बातें करने वालो को नजदीक से दूर जाते देखा है…”</p>
+        </div>
+        <div class="shayari-box">
+            <p class="shayari-text">अगर तुम्हारी अना ही का है सवाल तो फिर</p>
+            <p class="shayari-text">चलो मैं हाथ बढ़ाता हूँ दोस्ती के लिए"</p>
+        </div>
+        <div class="shayari-box">
+            <p class="shayari-text">दुश्मनों से प्यार होता जाएगा</p>
+            <p class="shayari-text">दोस्तों को आज़माते जाइए</p>
+        </div>
+    </div>
+
+    <button class="btn" onclick="window.location.href='prank.html'">Click here to more ...</button>
+
+    <!-- Contact Details -->
+    <div class="contact-info">
+        <p>Created by: <strong>Siddhant</strong></p>
+        <p>📷 Instagram: <a href="https://www.instagram.com/pt.shubh_bhardwaj_52?igsh=MWg1dDNiY3F4YnFhaA==" target="_blank">@pt.shubh_bhardwaj_52</a></p>
+        <p>📘 Facebook: <a href="https://facebook.com/yourfb" target="_blank">@siddhant bhardwaj</a></p>
+        <p>📞 Mobile: <strong>+91 6395823929</strong></p>
+        <p>📧 Gmail: <a href="mailto:youremail@gmail.com">shubhsiddhant4@gmail.com</a></p>
+    </div>
+
+</body>
+</html>
